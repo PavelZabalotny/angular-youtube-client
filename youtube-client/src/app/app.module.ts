@@ -7,6 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { SearchResultsComponent } from './search/search-results/search-results.component';
 import { SearchItemComponent } from './search/search-item/search-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchInputComponent } from './header/search-input/search-input.component';
+import { FilterComponent } from './header/filter/filter.component';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material/material.module'
+import { CommonModule } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -14,13 +19,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     SearchResultsComponent,
     SearchItemComponent,
+    SearchInputComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background: url("~src/assets/icons/youtube.svg") no-repeat center/100px;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 300px;
+  margin-top: 18px;
+
+}
+
+.search-button {
+  padding: 8px 40px;
+  font-size: 1.25rem;
+}
+
+.search-settings {
+  width: 60px;
+  height: 50px;
+  font-size: 65px;
+  line-height: 78%;
+  cursor: pointer;
+}
