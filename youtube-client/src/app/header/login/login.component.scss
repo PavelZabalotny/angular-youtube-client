@@ -1,0 +1,24 @@
+.login {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
+  //background: #ccc;
+}
+
+.login-icon {
+  width: 58px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  font-size: 65px;
+  line-height: 78%;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.login-name {
+  color: #4F4F4F;
+  font-weight: bold;
+}

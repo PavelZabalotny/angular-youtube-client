@@ -11,7 +11,8 @@ import { SearchInputComponent } from './header/search-input/search-input.compone
 import { FilterComponent } from './header/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module'
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './header/login/login.component'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common'
     SearchItemComponent,
     SearchInputComponent,
     FilterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
