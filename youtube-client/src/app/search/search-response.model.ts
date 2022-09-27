@@ -11,7 +11,7 @@ export interface ISearchResponse {
     totalResults: number,
     resultsPerPage: number,
   },
-  items: [
+  items:
     {
       kind: string,
       etag: string,
@@ -32,6 +32,7 @@ export interface ISearchResponse {
         tags: string[],
         categoryId: string,
         liveBroadcastContent: string,
+        defaultLanguage?: string,
         localized: {
           title: string,
           description: string,
@@ -45,6 +46,5 @@ export interface ISearchResponse {
         favoriteCount: string,
         commentCount: string,
       }
-    }
-  ]
+    }[]
 }
