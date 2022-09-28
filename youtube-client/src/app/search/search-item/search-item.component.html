@@ -1,1 +1,32 @@
-<p>search-item works!</p>
+<div class="item">
+  <div class="item__wrapper">
+    <div class="item__img">
+      <img [src]="item.snippet.thumbnails.medium.url" [alt]="item.snippet.title">
+    </div>
+    <div class="item__statistics">
+    <span class="statistic__view-count">
+      <mat-icon color="primary">visibility</mat-icon>
+      {{ item.statistics.viewCount }}
+    </span>
+      <span class="statistic__like-count">
+      <mat-icon color="primary">thumb_up</mat-icon>
+        {{ item.statistics.likeCount }}
+    </span>
+      <span class="statistic__dislike-count">
+      <mat-icon color="primary">thumb_down</mat-icon>
+        {{ item.statistics.dislikeCount }}
+    </span>
+      <span class="statistic__comment-count">
+      <mat-icon color="primary">forum</mat-icon>
+        {{ item.statistics.commentCount }}
+    </span>
+    </div>
+    <div class="item__title">{{ item.snippet.title }}</div>
+  </div>
+  <button
+    class="item__button"
+    mat-raised-button color="primary">
+    More...
+  </button>
+</div>
+
