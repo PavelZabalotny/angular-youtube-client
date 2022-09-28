@@ -1,6 +1,6 @@
 <div class="header-container">
   <div class="logo" routerLink="/"></div>
-  <app-search-input></app-search-input>
+  <app-search-input (onClickSettings)="toggleShowFilter()"></app-search-input>
   <app-login></app-login>
 </div>
-<app-filter></app-filter>
+<app-filter *ngIf="showFilter"></app-filter>
