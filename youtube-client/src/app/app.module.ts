@@ -12,7 +12,8 @@ import { FilterComponent } from './header/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module'
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './header/login/login.component'
+import { LoginComponent } from './header/login/login.component';
+import { BorderBottomColorDirective } from './shared/directive/border-bottom-color/border-bottom-color.directive'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LoginComponent } from './header/login/login.component'
     SearchInputComponent,
     FilterComponent,
     LoginComponent,
+    BorderBottomColorDirective,
   ],
   imports: [
     BrowserModule,

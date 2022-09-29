@@ -1,19 +1,35 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { animate, style, transition, trigger } from '@angular/animations'
+
+const fadeInOut = trigger(
+  'fadeInOut', [
+    transition('void => *', [
+      style({ opacity: 0 }),
+      animate('0.5s', style({ opacity: 1 })),
+    ]),
+    transition('* => void', [
+      animate('0.2s', style({ opacity: 0 })),
+    ]),
+  ]
+)
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations: [fadeInOut]
 })
 export class HeaderComponent implements OnInit {
-  @Input() showFilter = false
+  isFilterShown = false
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   toggleShowFilter() {
-    this.showFilter = !this.showFilter
+    this.isFilterShown = !this.isFilterShown
   }
 }

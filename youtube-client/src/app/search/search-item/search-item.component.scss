@@ -1,3 +1,9 @@
+:host {
+  border-radius: 5px;
+  border-bottom: 10px solid red;
+  background: #e1e1e1;
+}
+
 .item {
   height: 400px;
   display: flex;
@@ -5,16 +11,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  background: #e1e1e1;
-  border-radius: 5px;
-  // TODO: Change the color of the border depending on the date using a custom directive
-  border-bottom: 6px solid red;
 }
 
 .item__statistics {
+  max-width: 320px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
   justify-content: space-between;
   margin-top: 1rem;
 

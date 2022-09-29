@@ -3,4 +3,4 @@
   <app-search-input (onClickSettings)="toggleShowFilter()"></app-search-input>
   <app-login></app-login>
 </div>
-<app-filter *ngIf="showFilter"></app-filter>
+<app-filter class="filter" *ngIf="isFilterShown" [@fadeInOut]="isFilterShown ? 'show' : 'hide'"></app-filter>
