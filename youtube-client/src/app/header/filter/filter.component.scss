@@ -19,6 +19,11 @@
   cursor: pointer;
   color: #3f51b5;
   text-decoration: underline;
+
+  &:last-child {
+    text-decoration: none;
+    cursor: default;
+  }
 }
 
 .filter-form {
