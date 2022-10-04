@@ -1,6 +1,6 @@
 <!--<div class="search-results" *ngFor="let item of response.items"></div>-->
 <app-search-item
-  *ngFor="let item of response.items; trackBy: trackByFn"
+  *ngFor="let item of response.items trackBy: trackByFn"
   [item]="item"
   [borderBottomColor]="item.snippet.publishedAt"
 >

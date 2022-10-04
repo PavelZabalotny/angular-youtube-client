@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 import { animate, style, transition, trigger } from '@angular/animations'
 
 const fadeInOut = trigger(
@@ -10,24 +10,17 @@ const fadeInOut = trigger(
     transition('* => void', [
       animate('0.2s', style({ opacity: 0 })),
     ]),
-  ]
+  ],
 )
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [fadeInOut]
+  animations: [fadeInOut],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   isFilterShown = false
-
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
   toggleShowFilter() {
     this.isFilterShown = !this.isFilterShown
