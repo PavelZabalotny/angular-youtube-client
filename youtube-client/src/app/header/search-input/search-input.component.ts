@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core'
+import { FilterService } from '../../shared/services/filter.service'
 
 @Component({
   selector: 'app-search-input',
@@ -8,10 +9,13 @@ import { Component, EventEmitter, Output } from '@angular/core'
 export class SearchInputComponent {
   @Output() clickSettings = new EventEmitter<boolean>()
 
+  constructor(private filter: FilterService) {
+  }
+
   value = ''
 
   onClickSettings(): void {
     this.clickSettings.emit()
+    this.filter.filterValue = ''
   }
-
 }

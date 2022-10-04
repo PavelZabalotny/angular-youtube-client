@@ -8,8 +8,8 @@
   </ul>
   <mat-form-field class="filter-form">
     <mat-label>filter:</mat-label>
-    <input matInput type="text" [(ngModel)]="value">
-    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="setFilterValue()">
+    <button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>

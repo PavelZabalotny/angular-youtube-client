@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { FilterService } from '../../shared/services/filter.service'
 
 @Component({
   selector: 'app-filter',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core'
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
-  value = ''
+  filterValue = ''
+
+  constructor(private filter: FilterService) {
+  }
+
+  setFilterValue() {
+    this.filter.setFilterValue(this.filterValue.trim().toLowerCase())
+  }
+
+  clearFilter() {
+    this.filterValue = ''
+    this.setFilterValue()
+  }
 }
