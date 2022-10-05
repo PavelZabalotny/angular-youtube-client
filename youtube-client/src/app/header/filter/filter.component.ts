@@ -13,7 +13,7 @@ export class FilterComponent {
   }
 
   setFilterValue() {
-    this.filter.setFilterValue(this.filterValue.trim().toLowerCase())
+    this.filter.value = this.filterValue.trim().toLowerCase()
   }
 
   clearFilter() {

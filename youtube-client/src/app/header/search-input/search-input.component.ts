@@ -16,6 +16,6 @@ export class SearchInputComponent {
 
   onClickSettings(): void {
     this.clickSettings.emit()
-    this.filter.filterValue = ''
+    this.filter.value = ''
   }
 }
