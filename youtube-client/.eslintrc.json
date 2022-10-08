@@ -30,7 +30,8 @@
           }
         ],
         "semi": ["error", "never"],
-        "@typescript-eslint/semi": "off"
+        "@typescript-eslint/semi": "off",
+        "@typescript-eslint/lines-between-class-members": "off"
       }
     },
     {
