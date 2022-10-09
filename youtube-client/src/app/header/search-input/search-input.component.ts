@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core'
 import { FilterService } from '../../shared/services/filter.service'
+import { ResultsService } from '../../shared/services/results.service'
 
 @Component({
   selector: 'app-search-input',
@@ -9,7 +10,7 @@ import { FilterService } from '../../shared/services/filter.service'
 export class SearchInputComponent {
   @Output() clickSettings = new EventEmitter<boolean>()
 
-  constructor(private filter: FilterService) {
+  constructor(private filter: FilterService, private results: ResultsService) {
   }
 
   value = ''
@@ -17,5 +18,18 @@ export class SearchInputComponent {
   onClickSettings(): void {
     this.clickSettings.emit()
     this.filter.value = ''
+  }
+
+  isDisabled(value: string): boolean {
+    return value.trim().length === 0
+  }
+
+  clearValue(): void {
+    this.value = ''
+  }
+
+  onClickSearchButton(): void {
+    console.log('click search btn')
+    this.results.isShow = true
   }
 }

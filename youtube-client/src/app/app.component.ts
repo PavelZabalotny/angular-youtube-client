@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { ResultsService } from './shared/services/results.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'youtube-client'
+
+  constructor(private results: ResultsService) {
+  }
+
+  isShowResults() {
+    return this.results.isShow
+  }
 }
