@@ -25,4 +25,8 @@ export class HeaderComponent {
   toggleShowFilter() {
     this.isFilterShown = !this.isFilterShown
   }
+
+  fadeInOut(isFilterShown: boolean): 'show' | 'hide' {
+    return isFilterShown ? 'show' : 'hide'
+  }
 }
