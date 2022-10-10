@@ -5,13 +5,13 @@ import { ISort } from '../../header/filter/sort.model'
   providedIn: 'root',
 })
 export class SortService {
-  private _value: ISort = {}
+  private sortField: ISort = {}
 
   get value() {
-    return this._value
+    return this.sortField
   }
 
   set value(value: ISort) {
-    this._value = Object.assign({}, value)
+    this.sortField = { ...value }
   }
 }

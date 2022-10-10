@@ -20,5 +20,4 @@ export class SearchResultsComponent {
   trackByFn(index: number, item: ISearchItem) {
     return item.id
   }
-
 }

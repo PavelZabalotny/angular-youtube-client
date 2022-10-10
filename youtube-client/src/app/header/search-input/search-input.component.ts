@@ -29,7 +29,6 @@ export class SearchInputComponent {
   }
 
   onClickSearchButton(): void {
-    console.log('click search btn')
     this.results.isShow = true
   }
 }

@@ -1,4 +1,6 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core'
+import {
+  AfterViewInit, Directive, ElementRef, Input,
+} from '@angular/core'
 
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24
 const SIX_MONTH = Math.floor(365 / 2)

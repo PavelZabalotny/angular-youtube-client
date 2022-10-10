@@ -6,7 +6,6 @@ import { ISearchItem } from '../../search/search-item.model'
   name: 'sort',
 })
 export class SortPipe implements PipeTransform {
-
   transform(items: ISearchItem[], sortSettings?: ISort): ISearchItem[] {
     if (!sortSettings) {
       return items

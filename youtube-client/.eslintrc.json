@@ -17,6 +17,7 @@
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
+        "airbnb-base",
         "airbnb-typescript/base",
         "plugin:import/recommended"
       ],
@@ -31,7 +32,9 @@
         ],
         "semi": ["error", "never"],
         "@typescript-eslint/semi": "off",
-        "@typescript-eslint/lines-between-class-members": "off"
+        "@typescript-eslint/lines-between-class-members": "off",
+        "import/prefer-default-export": "off",
+        "class-methods-use-this": "off"
       }
     },
     {
