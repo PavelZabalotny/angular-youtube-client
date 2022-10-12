@@ -10,6 +10,7 @@ import { SearchInputComponent } from './core/components/search-input/search-inpu
 import { FilterComponent } from './core/components/filter/filter.component'
 import { MaterialModule } from './material/material.module'
 import { LoginComponent } from './core/components/login/login.component'
+import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginComponent } from './core/components/login/login.component'
     SearchInputComponent,
     FilterComponent,
     LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
