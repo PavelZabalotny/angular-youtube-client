@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { ISort, TSortOrder, TSortValue } from '../../header/filter/sort.model'
-import { ISearchItem } from '../../search/search-item.model'
+import { ISort, TSortOrder, TSortValue } from '../../../core/components/filter/sort.model'
+import { ISearchItem } from '../../models/search-item.model'
 
 @Pipe({
   name: 'sort',

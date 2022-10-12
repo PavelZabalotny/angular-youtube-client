@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
-import { ISearchResponse } from '../search-response.model'
+import { ISearchResponse } from '../../models/search-response.model'
 import { response } from './mock-response.model'
-import { ISearchItem } from '../search-item.model'
-import { FilterService } from '../../shared/services/filter.service'
-import { SortService } from '../../shared/services/sort.service'
+import { ISearchItem } from '../../models/search-item.model'
+import { FilterService } from '../../services/filter/filter.service'
+import { SortService } from '../../services/sort/sort.service'
 
 @Component({
   selector: 'app-search-results',

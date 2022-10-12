@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { ISort } from '../../header/filter/sort.model'
+import { ISort } from '../../../core/components/filter/sort.model'
 
 @Injectable({
   providedIn: 'root',

@@ -1,34 +1,23 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { HeaderComponent } from './header/header.component'
-import { SearchResultsComponent } from './search/search-results/search-results.component'
-import { SearchItemComponent } from './search/search-item/search-item.component'
-import { SearchInputComponent } from './header/search-input/search-input.component'
-import { FilterComponent } from './header/filter/filter.component'
+import { HeaderComponent } from './core/components/header/header.component'
+import { SearchInputComponent } from './core/components/search-input/search-input.component'
+import { FilterComponent } from './core/components/filter/filter.component'
 import { MaterialModule } from './material/material.module'
-import { LoginComponent } from './header/login/login.component'
-import { BorderBottomColorDirective } from './shared/directive/border-bottom-color/border-bottom-color.directive'
-import { FilterPipe } from './shared/pipes/filter.pipe'
-import { SortPipe } from './shared/pipes/sort.pipe'
+import { LoginComponent } from './core/components/login/login.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
     SearchInputComponent,
     FilterComponent,
     LoginComponent,
-    BorderBottomColorDirective,
-    FilterPipe,
-    SortPipe,
   ],
   imports: [
     BrowserModule,
