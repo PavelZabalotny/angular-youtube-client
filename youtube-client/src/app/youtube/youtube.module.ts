@@ -8,6 +8,9 @@ import { BorderBottomColorDirective } from './directives/border-bottom-color/bor
 import { FilterPipe } from './pipes/filter/filter.pipe'
 import { SortPipe } from './pipes/sort/sort.pipe'
 import { MaterialModule } from '../material/material.module'
+import {
+  DetailedInformationComponent,
+} from './pages/detailed-information/detailed-information/detailed-information.component'
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import { MaterialModule } from '../material/material.module'
     BorderBottomColorDirective,
     FilterPipe,
     SortPipe,
+    DetailedInformationComponent,
   ],
   imports: [
     CommonModule,
