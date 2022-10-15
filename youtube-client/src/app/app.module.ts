@@ -11,6 +11,7 @@ import { FilterComponent } from './core/components/filter/filter.component'
 import { MaterialModule } from './material/material.module'
 import { LoginComponent } from './core/components/login/login.component'
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
+import { AuthModule } from './auth/auth.module'
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-foun
     MaterialModule,
     BrowserAnimationsModule,
     FormsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

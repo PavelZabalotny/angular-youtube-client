@@ -2,11 +2,16 @@ import { Injectable } from '@angular/core'
 
 const token = 'auth_token'
 
+export interface ILogin {
+  login: string,
+  password: string,
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  login(login: string, password: string) {
+  login({ login, password }: ILogin) {
     localStorage.setItem(token, `${login}.${password}`)
   }
 
@@ -14,7 +19,7 @@ export class LoginService {
     localStorage.removeItem(token)
   }
 
-  isLogin() {
-    return localStorage.getItem(token)
+  isLoggedIn() {
+    return !!localStorage.getItem(token)
   }
 }

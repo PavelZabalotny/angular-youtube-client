@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { MainComponent } from './pages/main/main.component'
+import { YoutubeGuard } from './guards/youtube/youtube.guard'
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
+  {
+    path: '',
+    component: MainComponent,
+    canActivate: [YoutubeGuard],
+  },
 ]
 
 @NgModule({
