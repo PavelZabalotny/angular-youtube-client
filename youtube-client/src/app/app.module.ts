@@ -1,30 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
-import { SearchItemComponent } from './search/search-item/search-item.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchInputComponent } from './header/search-input/search-input.component';
-import { FilterComponent } from './header/filter/filter.component';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FormsModule } from '@angular/forms'
+import { CommonModule } from '@angular/common'
+import { AppRoutingModule } from './app-routing.module'
+import { AppComponent } from './app.component'
+import { HeaderComponent } from './core/components/header/header.component'
+import { SearchInputComponent } from './core/components/search-input/search-input.component'
+import { FilterComponent } from './core/components/filter/filter.component'
 import { MaterialModule } from './material/material.module'
-import { CommonModule } from '@angular/common';
-import { LoginComponent } from './header/login/login.component';
-import { BorderBottomColorDirective } from './shared/directive/border-bottom-color/border-bottom-color.directive'
+import { LoginComponent } from './core/components/login/login.component'
+import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
+import { AuthModule } from './auth/auth.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
     SearchInputComponent,
     FilterComponent,
     LoginComponent,
-    BorderBottomColorDirective,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +29,7 @@ import { BorderBottomColorDirective } from './shared/directive/border-bottom-col
     MaterialModule,
     BrowserAnimationsModule,
     FormsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
