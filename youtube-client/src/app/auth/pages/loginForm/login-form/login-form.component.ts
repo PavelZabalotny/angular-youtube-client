@@ -1,9 +1,11 @@
 import { Component } from '@angular/core'
 import {
-  FormBuilder, FormControl, Validators,
+  FormBuilder, Validators,
 } from '@angular/forms'
 import { Router } from '@angular/router'
 import { ILogin, LoginService } from '../../../services/login/login.service'
+
+const passwordPattern = '^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&(){}[\\]:;<>,.?~_+\\-=|\\\\/"\']).{8,}$'
 
 @Component({
   selector: 'app-login-form',
@@ -12,8 +14,8 @@ import { ILogin, LoginService } from '../../../services/login/login.service'
 })
 export class LoginFormComponent {
   form = this.fb.group({
-    login: ['', [Validators.required, this.checkLength]],
-    password: ['', [Validators.required, this.checkLength]],
+    login: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.pattern(passwordPattern)]],
   })
 
   constructor(
@@ -28,15 +30,6 @@ export class LoginFormComponent {
     this.form.value.password = this.form.value.password?.trim()
     this.loginService.login(<ILogin> this.form.value)
     this.router.navigate(['/youtube'])
-  }
-
-  checkLength(control: FormControl) {
-    if (control.value.trim().length === 0) {
-      return {
-        lengthError: true,
-      }
-    }
-    return null
   }
 
   get login() {

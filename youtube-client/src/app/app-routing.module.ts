@@ -4,13 +4,13 @@ import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-foun
 import { LoginFormComponent } from './auth/pages/loginForm/login-form/login-form.component'
 import { AuthGuard } from './core/guards/auth.guard'
 import { YoutubeGuard } from './youtube/guards/youtube/youtube.guard'
+import { CreateCardComponent } from './core/pages/admin/create-card/create-card.component'
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     redirectTo: '/login',
-    // component: LoginFormComponent,
   },
   {
     path: 'login',
@@ -20,6 +20,11 @@ const routes: Routes = [
   {
     path: 'youtube',
     loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule),
+    canActivate: [YoutubeGuard],
+  },
+  {
+    path: 'admin',
+    component: CreateCardComponent,
     canActivate: [YoutubeGuard],
   },
   {
