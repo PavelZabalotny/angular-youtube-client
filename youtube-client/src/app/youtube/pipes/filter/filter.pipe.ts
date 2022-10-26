@@ -1,15 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { ISearchItem } from '../../models/search-item.model'
+import { IVideoItem } from '../../models/video-item.model'
 
 @Pipe({
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-  transform(items: ISearchItem[], filterValue?: string): ISearchItem[] {
+  transform(items: IVideoItem[], filterValue?: string): IVideoItem[] {
     if (!filterValue) {
       return items
     }
-    let newItems: ISearchItem[] = []
+    let newItems: IVideoItem[] = []
 
     if (filterValue) {
       newItems = this.filter(items, filterValue)
@@ -18,7 +18,7 @@ export class FilterPipe implements PipeTransform {
     return newItems
   }
 
-  filter(items: ISearchItem[], filterValue: string) {
+  filter(items: IVideoItem[], filterValue: string) {
     return items.filter((item) => item.snippet.title.toLowerCase().includes(filterValue))
   }
 }

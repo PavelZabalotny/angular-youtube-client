@@ -1,4 +1,5 @@
-$img-width: 704px;
+$img-width: 480px;
+$aspect-ratio: 3 / 4;
 
 :host {
   display: block;
@@ -8,7 +9,7 @@ $img-width: 704px;
 
 .item {
   width: 1200px;
-  height: calc($img-width / 16 * 9);
+  height: calc($img-width * $aspect-ratio);
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -33,7 +34,7 @@ $img-width: 704px;
 .video {
   img {
     width: $img-width;
-    height: calc($img-width / 16 * 9);
+    height: calc($img-width * $aspect-ratio);
     border-radius: 0 0 0 5px;
   }
 }

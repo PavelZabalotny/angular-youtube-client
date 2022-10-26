@@ -10,6 +10,7 @@ import { ResultsService } from '../../../youtube/services/results/results.servic
 })
 export class SearchInputComponent {
   @Output() clickSettings = new EventEmitter<boolean>()
+  inputValue = ''
 
   constructor(
     private filter: FilterService,
@@ -17,8 +18,6 @@ export class SearchInputComponent {
     private router: Router,
   ) {
   }
-
-  value = ''
 
   onClickSettings(): void {
     this.clickSettings.emit()
@@ -30,11 +29,16 @@ export class SearchInputComponent {
   }
 
   clearValue(): void {
-    this.value = ''
+    this.inputValue = ''
   }
 
-  onClickSearchButton(): void {
-    this.results.isShow = true
-    this.router.navigate(['/youtube'])
+  onChange(event: KeyboardEvent) {
+    const { value } = <HTMLInputElement>event.target
+    const { length } = value.trim()
+    if (length >= 3) {
+      this.results.isShow = true
+      this.router.navigate(['/youtube'])
+      this.results.searchValue.next(value)
+    }
   }
 }
