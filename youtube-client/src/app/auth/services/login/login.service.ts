@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core'
+import { BehaviorSubject } from 'rxjs'
+import { Router } from '@angular/router'
 
 const token = 'auth_token'
 
@@ -11,15 +13,23 @@ export interface ILogin {
   providedIn: 'root',
 })
 export class LoginService {
-  login({ login, password }: ILogin) {
+  isLog = new BehaviorSubject<boolean>(this.isLoggedIn())
+
+  constructor(private router: Router) {
+  }
+
+  login({ login, password }: ILogin): void {
     localStorage.setItem(token, `${login}.${password}`)
+    this.isLog.next(true)
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem(token)
+    this.isLog.next(false)
+    this.router.navigate(['/'])
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     return !!localStorage.getItem(token)
   }
 }
