@@ -4,14 +4,13 @@ import {
   BehaviorSubject,
   map, Observable,
 } from 'rxjs'
-import { environment } from '../../../../environments/environment'
 import { ISearchResponse } from '../../models/search-response.model'
 import { IVideoResponse } from '../../models/video-response.model'
 import { IVideoItem } from '../../models/video-item.model'
 import { ISearchItem } from '../../models/search-item.model'
 
-const URL_SEARCH = `https://www.googleapis.com/youtube/v3/search?key=${environment.YOUTUBE_API_KEY}&type=video&part=snippet&maxResults=15&q=`
-const URL_VIDEO = `https://www.googleapis.com/youtube/v3/videos?key=${environment.YOUTUBE_API_KEY}&part=snippet,statistics&id=`
+const URL_SEARCH = 'https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&maxResults=15'
+const URL_VIDEO = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics'
 
 @Injectable({
   providedIn: 'root',
@@ -33,12 +32,12 @@ export class ResultsService {
   }
 
   getVideoById(id: string): Observable<IVideoResponse> {
-    const url = URL_VIDEO + id
+    const url = `${URL_VIDEO}&id=${id}`
     return this.http.get<IVideoResponse>(url)
   }
 
   getSearchResult(query: string): Observable<ISearchItem[]> {
-    const url = URL_SEARCH + query
+    const url = `${URL_SEARCH}&q=${query}`
     return this.http.get<ISearchResponse>(url).pipe(
       map((response) => response.items),
     )
@@ -49,7 +48,7 @@ export class ResultsService {
   }
 
   getVideoItems(id: string): Observable<IVideoItem[]> {
-    const url = URL_VIDEO + id
+    const url = `${URL_VIDEO}&id=${id}`
     return this.http.get<IVideoResponse>(url).pipe(
       map((video) => video.items),
     )

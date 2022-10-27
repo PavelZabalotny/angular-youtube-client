@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './core/components/header/header.component'
@@ -14,6 +14,7 @@ import { LoginComponent } from './core/components/login/login.component'
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
 import { AuthModule } from './auth/auth.module'
 import { CreateCardComponent } from './core/pages/admin/create-card/create-card.component'
+import { YoutubeTokenInterceptor } from './shared/interceptors/youtube-token/youtube-token.interceptor'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { CreateCardComponent } from './core/pages/admin/create-card/create-card.
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: YoutubeTokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {
