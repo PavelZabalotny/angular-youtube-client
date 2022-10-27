@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { StoreModule } from '@ngrx/store'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './core/components/header/header.component'
@@ -36,6 +37,7 @@ import { YoutubeTokenInterceptor } from './shared/interceptors/youtube-token/you
     AuthModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: YoutubeTokenInterceptor, multi: true },
