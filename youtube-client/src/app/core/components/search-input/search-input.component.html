@@ -1,8 +1,8 @@
 <mat-form-field class="search-input" appearance="fill">
   <mat-label>Search:</mat-label>
-  <input matInput type="text" [(ngModel)]="value">
+  <input matInput type="text" [(ngModel)]="inputValue" (keyup)="onChange($event)">
   <button
-    *ngIf="value"
+    *ngIf="inputValue"
     matSuffix
     mat-icon-button
     aria-label="Clear"
@@ -11,15 +11,6 @@
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>
-<button
-  class="search-button"
-  mat-raised-button
-  color="primary"
-  [disabled]="isDisabled(value)"
-  (click)="onClickSearchButton()"
->
-  Search
-</button>
 <mat-icon
   class="search-settings"
   color="primary"
