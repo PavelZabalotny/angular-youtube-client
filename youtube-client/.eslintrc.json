@@ -41,7 +41,8 @@
         "linebreak-style": [
           "error",
           "windows"
-        ]
+        ],
+        "arrow-body-style": "off"
       }
     },
     {

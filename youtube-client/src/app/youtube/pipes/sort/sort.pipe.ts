@@ -10,16 +10,20 @@ export class SortPipe implements PipeTransform {
     if (!sortSettings) {
       return items
     }
-    let newItems: IVideoItem[] = items
 
     if (Object.keys(sortSettings).length) {
-      newItems = this.sort(items, sortSettings)
+      return this.sort(items, sortSettings)
     }
-    return newItems
+
+    return items
   }
 
   sort(items: IVideoItem[], sortSettings: ISort) {
-    return items.sort((a, b) => this.sortCallback(a, b, sortSettings.property, sortSettings.order))
+    const copyItems = [...items]
+
+    return copyItems.sort(
+      (a, b) => this.sortCallback(a, b, sortSettings.property, sortSettings.order),
+    )
   }
 
   sortCallback(a: IVideoItem, b: IVideoItem, property?: TSortValue, order?: TSortOrder) {

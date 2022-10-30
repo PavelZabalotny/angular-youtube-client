@@ -1,5 +1,5 @@
 <app-search-item
-  *ngFor="let item of (items | filter:filter.value | sort:sort.value) trackBy:trackByFn"
+  *ngFor="let item of (items$ | async | filter:filter.value | sort:sort.value) trackBy:trackByFn"
   [item]="item"
   [borderBottomColor]="item.snippet.publishedAt"
 >

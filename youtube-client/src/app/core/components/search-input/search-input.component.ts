@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core'
 import { Router } from '@angular/router'
+import { Store } from '@ngrx/store'
 import { FilterService } from '../../../youtube/services/filter/filter.service'
 import { ResultsService } from '../../../youtube/services/results/results.service'
+import { loadSearchResponse } from '../../../redux/actions/youtube.actions'
 
 @Component({
   selector: 'app-search-input',
@@ -16,6 +18,7 @@ export class SearchInputComponent {
     private filter: FilterService,
     private results: ResultsService,
     private router: Router,
+    private store: Store,
   ) {
   }
 
@@ -36,9 +39,9 @@ export class SearchInputComponent {
     const { value } = <HTMLInputElement>event.target
     const { length } = value.trim()
     if (length >= 3) {
+      this.store.dispatch(loadSearchResponse({ query: value }))
       this.results.isShow = true
       this.router.navigate(['/youtube'])
-      this.results.searchValue.next(value)
     }
   }
 }
