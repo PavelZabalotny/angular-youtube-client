@@ -23,3 +23,9 @@
   color: #4F4F4F;
   font-weight: bold;
 }
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
