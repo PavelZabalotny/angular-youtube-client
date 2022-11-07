@@ -19,6 +19,7 @@ import { CreateCardComponent } from './core/pages/admin/create-card/create-card.
 import { YoutubeTokenInterceptor } from './shared/interceptors/youtube-token/youtube-token.interceptor'
 import { YoutubeEffects } from './redux/effects/youtube.effects'
 import { youtubeCardsReducer } from './redux/reducers/youtubeCards.reducer'
+import { customCardsReducer } from './redux/reducers/customCard.reducer'
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { youtubeCardsReducer } from './redux/reducers/youtubeCards.reducer'
     HttpClientModule,
     StoreModule.forRoot({
       youtubeCards: youtubeCardsReducer,
+      customCards: customCardsReducer,
     }, {}),
     EffectsModule.forRoot([YoutubeEffects]),
   ],
