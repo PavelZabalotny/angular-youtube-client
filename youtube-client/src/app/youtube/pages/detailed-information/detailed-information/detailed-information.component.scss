@@ -1,5 +1,5 @@
 $img-width: 480px;
-$aspect-ratio: 3 / 4;
+$aspect-ratio: calc(3 / 4);
 
 :host {
   display: block;
