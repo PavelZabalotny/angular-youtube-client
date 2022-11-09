@@ -52,7 +52,9 @@ export class CreateCardComponent {
     const {
       title, description, imageUrl, publishedAt,
     } = <ICustomCard> this.form.value
+    const id: string = Math.random().toString()
     const card = {
+      id,
       snippet: {
         title,
         description,
