@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store'
 import { EffectsModule } from '@ngrx/effects'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './core/components/header/header.component'
@@ -46,6 +47,9 @@ import { customCardsReducer } from './redux/reducers/customCard.reducer'
       customCards: customCardsReducer,
     }, {}),
     EffectsModule.forRoot([YoutubeEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 5,
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: YoutubeTokenInterceptor, multi: true },
