@@ -30,12 +30,19 @@
             "style": "kebab-case"
           }
         ],
-        "semi": ["error", "never"],
+        "semi": [
+          "error",
+          "never"
+        ],
         "@typescript-eslint/semi": "off",
         "@typescript-eslint/lines-between-class-members": "off",
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off",
-        "linebreak-style": ["error", "windows"]
+        "linebreak-style": [
+          "error",
+          "windows"
+        ],
+        "arrow-body-style": "off"
       }
     },
     {
@@ -46,6 +53,14 @@
         "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/recommended-requiring-type-checking"
+      ]
     }
   ]
 }

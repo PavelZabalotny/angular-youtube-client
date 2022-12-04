@@ -1,6 +1,11 @@
 import { Component } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
+import { Store } from '@ngrx/store'
 import { dateValidation } from '../../../../shared/directive/date-validation/date-validation.directive'
+import {
+  ICustomCard,
+  postCustomCard,
+} from '../../../../redux/actions/customCard.actions'
 
 const urlRegEx = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
 
@@ -11,22 +16,17 @@ const urlRegEx = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
 })
 export class CreateCardComponent {
   form = this.fb.group({
-    title: ['', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(20),
-    ]],
+    title: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.maxLength(20)],
+    ],
     description: ['', Validators.maxLength(255)],
-    image: ['', [Validators.required, Validators.pattern(urlRegEx)]],
-    video: ['', [Validators.required, Validators.pattern(urlRegEx)]],
-    date: ['', [Validators.required, dateValidation()]],
+    imageUrl: ['', [Validators.required, Validators.pattern(urlRegEx)]],
+    videoUrl: ['', [Validators.required, Validators.pattern(urlRegEx)]],
+    publishedAt: ['', [Validators.required, dateValidation()]],
   })
 
-  constructor(private fb: FormBuilder) {
-  }
-
-  onSubmit() {
-  }
+  constructor(private fb: FormBuilder, private store: Store) {}
 
   get title() {
     return this.form.get('title')
@@ -46,5 +46,35 @@ export class CreateCardComponent {
 
   get date() {
     return this.form.get('date')
+  }
+
+  onSubmit() {
+    const {
+      title, description, imageUrl, publishedAt,
+    } = <ICustomCard> this.form.value
+    const id: string = Math.random().toString()
+    const card = {
+      id,
+      snippet: {
+        title,
+        description,
+        publishedAt,
+        thumbnails: {
+          medium: {
+            url: imageUrl,
+          },
+          high: {
+            url: imageUrl,
+          },
+        },
+      },
+      statistics: {
+        viewCount: '111',
+        likeCount: '121',
+        dislikeCount: '12',
+        commentCount: '44',
+      },
+    }
+    this.store.dispatch(postCustomCard({ card }))
   }
 }

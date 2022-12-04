@@ -1,5 +1,5 @@
 $img-width: 480px;
-$aspect-ratio: 3 / 4;
+$aspect-ratio: calc(3 / 4);
 
 :host {
   display: block;
@@ -67,7 +67,7 @@ $aspect-ratio: 3 / 4;
 
 .description {
   p {
-    height: 140px;
+    height: 125px;
     overflow-y: hidden;
     font-size: 12px;
     line-height: 14px;

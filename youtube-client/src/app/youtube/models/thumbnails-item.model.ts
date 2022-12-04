@@ -1,5 +1,5 @@
 export type TThumbnailsItem = {
   url: string,
-  width: number,
-  height: number,
+  width?: number,
+  height?: number,
 }

@@ -8,7 +8,7 @@ import { IVideoItem } from '../../models/video-item.model'
   styleUrls: ['./search-item.component.scss'],
 })
 export class SearchItemComponent {
-  @Input() item!: IVideoItem
+  @Input() item: IVideoItem
   dislikeCount = 333
 
   constructor(private router: Router) {
