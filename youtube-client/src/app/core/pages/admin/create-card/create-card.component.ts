@@ -26,7 +26,8 @@ export class CreateCardComponent {
     publishedAt: ['', [Validators.required, dateValidation()]],
   })
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private fb: FormBuilder, private store: Store) {
+  }
 
   get title() {
     return this.form.get('title')
@@ -37,15 +38,15 @@ export class CreateCardComponent {
   }
 
   get image() {
-    return this.form.get('image')
+    return this.form.get('imageUrl')
   }
 
   get video() {
-    return this.form.get('video')
+    return this.form.get('videoUrl')
   }
 
   get date() {
-    return this.form.get('date')
+    return this.form.get('publishedAt')
   }
 
   onSubmit() {
@@ -76,5 +77,15 @@ export class CreateCardComponent {
       },
     }
     this.store.dispatch(postCustomCard({ card }))
+    this.resetForm()
+  }
+
+  private resetForm() {
+    const formFieldsLinks = [this.title, this.description, this.image, this.video, this.date]
+    formFieldsLinks.forEach((item) => {
+      item.reset()
+      item.clearValidators()
+      item.updateValueAndValidity()
+    })
   }
 }
