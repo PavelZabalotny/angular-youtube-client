@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search-input {
+  width: 500px;
+  margin-top: 18px;
+}
+
+.search-button {
+  padding: 8px 40px;
+  font-size: 1.25rem;
+}
+
+.search-settings {
+  width: 55px;
+  height: 50px;
+  font-size: 59px;
+  line-height: 86%;
+  cursor: pointer;
+}

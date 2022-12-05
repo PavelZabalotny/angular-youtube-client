@@ -1,0 +1,31 @@
+.header-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4F4F4F;
+  gap: 1rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.list__item {
+  display: inline-block;
+  cursor: pointer;
+  color: #3f51b5;
+  text-decoration: underline;
+
+  &:last-child {
+    text-decoration: none;
+    cursor: default;
+  }
+}
+
+.filter-form {
+  width: 200px;
+}

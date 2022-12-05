@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  padding: 1rem 0;
+  background: #F2F2F2;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background: url("../../../../assets/icons/youtube.svg") no-repeat center/100px;
+  cursor: pointer;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  align-items: center;
+}

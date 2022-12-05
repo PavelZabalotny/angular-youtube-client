@@ -1,0 +1,6 @@
+<app-search-item
+  *ngFor="let item of (store$ | async | filter:filter.value | sort:sort.value) trackBy:trackByFn"
+  [item]="item"
+  [borderBottomColor]="item.snippet.publishedAt"
+>
+</app-search-item>
