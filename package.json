@@ -7,7 +7,8 @@
     "build": "ng build --base-href /pavelzabalotny-ANGULAR2022Q3/youtube-client/dist/youtube-client/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng deploy --base-href=/angular-youtube-client/"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +42,7 @@
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
+    "angular-cli-ghpages": "^1.0.5",
     "eslint": "^8.23.1",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
